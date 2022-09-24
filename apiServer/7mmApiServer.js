@@ -1,5 +1,6 @@
 const Common = new require("./Common");
 class SevenApiServer extends Common {
+  //获取数据
   async getData(pageSize) {
     let url = "https://7mmtv.tv/zh/amateurjav_list/30/" + pageSize + ".html";
     console.log(url);
@@ -53,6 +54,12 @@ class SevenApiServer extends Common {
     });
 
     return list;
+  }
+
+  //保存数据
+  async saveData(date) {
+    let data = await this.getData(1);
+    console.log(data);
   }
 }
 module.exports = SevenApiServer;

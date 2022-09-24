@@ -1,9 +1,11 @@
 const express = require("express");
 require("express-async-errors");
+const dayjs = require("dayjs");
 const javbusRouter = require("./routes/javbusRoute");
 const sevenmmRouter = require("./routes/7mmRoute");
 const redisRouter = require("./routes/redisRoute");
 const chromeRoute = require("./routes/chromeRoute");
+
 //定时任务
 const runSchedule = require("./scheduleJob/scheduleJob");
 
@@ -51,8 +53,14 @@ app.use(function (err, req, res, next) {
 app.listen(port, () => {
   console.log(`Now, app listening on port ${port}`);
 
+  const handle = new require("./apiServer/7mmApiServer");
+  //当前的时间
+  new handle().saveData(dayjs().format("YYYY-MM-DD"));
+
   //注册定时任务方法
-  runSchedule(() => {
-    console.log("app 方法执行。。。");
-  });
+  // runSchedule(() => {
+  //   const handle = new require("./apiServer/7mmApiServer");
+  //   //当前的时间
+  //   new handle().saveData(dayjs().format("YYYY-MM-DD"));
+  // });
 });
