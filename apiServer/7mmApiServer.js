@@ -20,7 +20,7 @@ class SevenApiServer extends Common {
     // });
 
     let result = await axios.get(url);
-    console.log(result);
+    result = result.data;
 
     let list = [];
     const $ = this.cheerio.load(result);
