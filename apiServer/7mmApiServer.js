@@ -2,6 +2,8 @@ const Common = new require("./Common");
 
 const serviceAxios = new require("../request/request");
 
+const axios = require("axios");
+
 class SevenApiServer extends Common {
   //获取数据
   async getData(pageSize) {
@@ -12,11 +14,12 @@ class SevenApiServer extends Common {
     //     referer: url,
     //   },
     // });
-    let result = serviceAxios({
-      url: url,
-      method: "get",
-    });
+    // let result = serviceAxios({
+    //   url: url,
+    //   method: "get",
+    // });
 
+    let result = await axios.get(url);
     console.log(result);
 
     let list = [];
