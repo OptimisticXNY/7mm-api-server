@@ -53,9 +53,9 @@ app.use(function (err, req, res, next) {
 app.listen(port, () => {
   console.log(`Now, app listening on port ${port}`);
 
-  const handle = new require("./apiServer/7mmApiServer");
-  //当前的时间
-  new handle().saveData(dayjs().format("YYYY-MM-DD"));
+  // const handle = new require("./apiServer/7mmApiServer");
+  // //当前的时间
+  // new handle().saveData(dayjs().format("YYYY-MM-DD"));
 
   //注册定时任务方法
   // runSchedule(() => {
