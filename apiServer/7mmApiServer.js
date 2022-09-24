@@ -1,7 +1,4 @@
 const Common = new require("./Common");
-
-const serviceAxios = new require("../request/request");
-
 const axios = require("axios");
 
 class SevenApiServer extends Common {
