@@ -1,0 +1,22 @@
+{
+  "name": "7mm-api-server",
+  "version": "0.0.0",
+  "description": "simple 7mm api in node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "wander555",
+  "license": "MIT",
+  "dependencies": {
+    "aria2c": "^0.0.5",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "node-schedule": "^2.1.0",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^14.1.1",
+    "redis": "^4.1.0",
+    "request": "^2.88.2"
+  }
+}
