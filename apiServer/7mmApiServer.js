@@ -1,13 +1,20 @@
 const Common = new require("./Common");
+
+const serviceAxios = new require("../request/request");
+
 class SevenApiServer extends Common {
   //获取数据
   async getData(pageSize) {
     let url = "https://7mmtv.tv/zh/amateurjav_list/30/" + pageSize + ".html";
     // console.log(url);
-    let result = await this.request(url, {
-      headers: {
-        referer: url,
-      },
+    // let result = await this.request(url, {
+    //   headers: {
+    //     referer: url,
+    //   },
+    // });
+    let result = serviceAxios({
+      url: url,
+      method: "get",
     });
 
     console.log(result);
