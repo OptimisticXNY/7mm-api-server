@@ -1,10 +1,9 @@
 const Common = new require("./Common");
 const axios = require("axios");
-
 class SevenApiServer extends Common {
   //获取数据
   async getData(pageSize) {
-    let url = "https://7mmtv.tv/zh/amateurjav_list/30/" + pageSize + ".html";
+    let url = "https://7mmtv.sx/zh/amateurjav_list/all/" + pageSize + ".html";
     // console.log(url);
     // let result = await this.request(url, {
     //   headers: {
@@ -16,8 +15,10 @@ class SevenApiServer extends Common {
     //   method: "get",
     // });
 
+    console.log(url);
     let result = await axios.get(url);
     result = result.data;
+    console.log(pageSize);
 
     let list = [];
     const $ = this.cheerio.load(result);
