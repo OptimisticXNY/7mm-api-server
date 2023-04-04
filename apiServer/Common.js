@@ -67,8 +67,8 @@ class Common {
         opts.headers["user-agent"] = UserAgent;
 
         //设置代理
-        // opts.host = req.proxy.split(":")[0];
-        // opts.port = req.proxy.split(":")[1];
+        opts.host = req.proxy.split(":")[0];
+        opts.port = req.proxy.split(":")[1];
         that.requestHandle(uri, opts, (err, response, body) => {
           if (err) return reject(err);
           if (toJson) {

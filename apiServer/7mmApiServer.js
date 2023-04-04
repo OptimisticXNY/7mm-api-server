@@ -4,17 +4,6 @@ class SevenApiServer extends Common {
   //获取数据
   async getData(pageSize) {
     let url = "https://7mmtv.sx/zh/amateurjav_list/all/" + pageSize + ".html";
-    // console.log(url);
-    // let result = await this.request(url, {
-    //   headers: {
-    //     referer: url,
-    //   },
-    // });
-    // let result = serviceAxios({
-    //   url: url,
-    //   method: "get",
-    // });
-
     console.log(url);
     let result = await axios.get(url);
     result = result.data;
