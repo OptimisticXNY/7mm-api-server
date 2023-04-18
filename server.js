@@ -2,7 +2,6 @@ const express = require("express");
 require("express-async-errors");
 const dayjs = require("dayjs");
 const sevenmmRouter = require("./routes/7mmRoute");
-const chromeRoute = require("./routes/chromeRoute");
 
 const app = express();
 const port = 5601;
@@ -29,7 +28,7 @@ app.get("/", async (req, res, next) => {
 
 //router的总的调用方法
 app.use("/api/7mm", sevenmmRouter);
-app.use("/api/chrome", chromeRoute);
+// app.use("/api/chrome", chromeRoute);
 
 //全局报错处理
 app.use(function (err, req, res, next) {
