@@ -4,7 +4,7 @@ const dayjs = require("dayjs");
 const sevenmmRouter = require("./routes/7mmRoute");
 
 const app = express();
-const port = 5601;
+const port = proccess.env.PORT || 5601;
 
 // 全局返回头
 app.all("*", (req, res, next) => {
